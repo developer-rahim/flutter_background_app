@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_background/app_retain_widget.dart';
@@ -47,7 +46,7 @@ class _MyWidgetState extends State<MyWidget> {
       setState(() {
         _counter++;
       });
-      print('Counter incrementeds: $_counter');
+      print('Counter incrementeds: $_counter');jj
     });
     // TODO: implement initState
     super.initState();
