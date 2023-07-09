@@ -1,4 +1,4 @@
-package com.example.background
+package com.app.background
 
 import android.app.Notification
 import android.app.NotificationChannel
