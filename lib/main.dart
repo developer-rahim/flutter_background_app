@@ -4,12 +4,15 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_background/app_retain_widget.dart';
-import 'package:flutter_background/background_main.dart';
+
+void backgroundMain() {
+  WidgetsFlutterBinding.ensureInitialized();
+}
 
 void main() {
   runApp(MyApp());
 
-  var channel = const MethodChannel('com.example/background_service');
+  var channel = const MethodChannel('com.app/background_service');
   var callbackHandle = PluginUtilities.getCallbackHandle(backgroundMain);
   channel.invokeMethod('startService', callbackHandle!.toRawHandle());
 }

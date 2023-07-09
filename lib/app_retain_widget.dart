@@ -7,7 +7,7 @@ class AppRetainWidget extends StatelessWidget {
 
   final Widget? child;
 
-  final _channel = const MethodChannel('com.example/app_retain');
+  final _channel = const MethodChannel('com.app/app_retain');
 
   @override
   Widget build(BuildContext context) {
