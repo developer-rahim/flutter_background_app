@@ -1,4 +1,4 @@
-package com.example.background
+package com.app.background
 
 import android.app.Service
 import android.content.Context

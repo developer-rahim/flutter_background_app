@@ -1,4 +1,4 @@
-package com.example.background
+package com.app.background
 
 import android.os.Bundle
 import io.flutter.embedding.android.FlutterActivity

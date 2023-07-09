@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_background/app_retain_widget.dart';
 import 'package:flutter_background/background_main.dart';
-import 'package:flutter_background/counter_service.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,8 +12,6 @@ void main() {
   var channel = const MethodChannel('com.example/background_service');
   var callbackHandle = PluginUtilities.getCallbackHandle(backgroundMain);
   channel.invokeMethod('startService', callbackHandle!.toRawHandle());
-
-  CounterService.instance().startCounting();
 }
 
 class MyApp extends StatelessWidget {
@@ -35,7 +32,9 @@ class MyWidget extends StatefulWidget {
 
   @override
   State<MyWidget> createState() => _MyWidgetState();
-}///
+}
+
+///
 
 class _MyWidgetState extends State<MyWidget> {
   int _counter = 0;
@@ -65,32 +64,6 @@ class _MyWidgetState extends State<MyWidget> {
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Flutter Background Demo'),
-      ),
-      body: Center(
-        child: ValueListenableBuilder(
-          valueListenable: CounterService.instance().count,
-          builder: (context, count, child) {
-            return Text('Counting: $count');
-          },
         ),
       ),
     );
